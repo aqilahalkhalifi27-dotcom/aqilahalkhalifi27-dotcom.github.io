@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cafe Story — Kafe Remaja Paling Keren</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#"><span class="logo">☕</span> Cafe Story</a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="openCart" class="btn ghost" aria-label="Buka keranjang">
+          <span class="cart-count" id="cartCount">0</span> Keranjang
+        </button>
+        <a class="btn solid" href="checkout.html">Checkout</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Slider -->
+    <section id="home" class="hero">
+      <div class="slider" id="slider">
+        <div class="slide current">
+          <img src="assets/images/hero1.svg" alt="Cafe Story Hangout">
+          <div class="slide-overlay">
+            <h1>Tempat Nongkrong Favorit Remaja</h1>
+            <p>Wi‑Fi kencang, minuman enak, vibes estetik.</p>
+            <a href="#menu" class="btn solid lg">Lihat Menu</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/images/hero2.svg" alt="Fresh Brews">
+          <div class="slide-overlay">
+            <h1>Fresh Brews, Chill Vibes</h1>
+            <p>Dari espresso ke matcha — cerita kamu dimulai di sini.</p>
+            <a href="#menu" class="btn ghost lg">Pesan Sekarang</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/images/hero3.svg" alt="Snacks Study Stories ">
+          <div class="slide-overlay">
+            <h1>Snack • Study • Stories</h1>
+            <p>Ngobrol santai sampai proyek sekolah — semua muat.</p>
+            <a href="#about" class="btn solid lg">Kenalan Yuk</a>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button id="prevSlide" aria-label="Sebelumnya">‹</button>
+        <button id="nextSlide" aria-label="Berikutnya">›</button>
+      </div>
+      <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- Menu / Shop -->
+    <section id="menu" class="section container">
+      <div class="section-head">
+        <h2 class="reveal">Menu Favorit</h2>
+        <p class="muted reveal">Tambahkan ke keranjang dan lanjut ke checkout.</p>
+      </div>
+      <div class="grid products">
+        <!-- Items injected by JS -->
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section alt">
+      <div class="container grid about-grid">
+        <div class="reveal">
+          <h3>Kisah di Balik <span class="accent">Cafe Story</span></h3>
+          <p>Kami adalah ruang aman untuk remaja: belajar bareng, nugas, rapat komunitas kecil,
+            atau sekadar numpang cerita. Dari pemiliknya langsung — kamu! — misi kita simpel:
+            bikin tempat yang ramah, inklusif, dan selalu kekinian.</p>
+          <ul class="ticks">
+            <li>Ruang AC + Wi‑Fi cepat</li>
+            <li>Stopkontak di semua meja</li>
+            <li>Musik chillhop & k‑indie</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="card stat-card">
+            <div class="stat"><span id="statCups">0</span>+ cup kopi/bulan</div>
+            <div class="stat"><span id="statFriends">0</span>+ teman nongkrong</div>
+            <div class="stat">Sejak <span id="statSince">2023</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container">
+      <div class="section-head">
+        <h3 class="reveal">Kontak & Lokasi</h3>
+      </div>
+      <div class="contact-box reveal">
+        <form id="contactForm">
+          <div class="row">
+            <label>Nama
+              <input required type="text" name="name" placeholder="Nama kamu" />
+            </label>
+            <label>Email
+              <input required type="email" name="email" placeholder="kamu@email.com" />
+            </label>
+          </div>
+          <label>Pesan
+            <textarea required name="message" rows="4" placeholder="Tulis pesanmu..."></textarea>
+          </label>
+          <button class="btn solid">Kirim</button>
+          <small class="muted" id="contactStatus"></small>
+        </form>
+        <div class="map">
+          <iframe title="Map" src="https://maps.google.com/maps?q=Jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Keranjang belanja">
+    <div class="cart-header">
+      <h4>Keranjang</h4>
+      <button id="closeCart" aria-label="Tutup">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <span id="cartTotal">Rp0</span></div>
+      <a class="btn solid wfull" href="checkout.html">Checkout</a>
+    </div>
+  </aside>
+
+  <div id="overlay"></div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Cafe Story — All rights reserved.</div>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TT</a>
+        <a href="#" aria-label="X">X</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

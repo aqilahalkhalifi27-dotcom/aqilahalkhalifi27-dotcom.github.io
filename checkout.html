@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Cafe Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="checkout-body">
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="logo">☕</span> Cafe Story</a>
+      <nav class="nav-links">
+        <a href="index.html#menu">Kembali ke Menu</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn ghost" href="index.html">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section container">
+    <div class="section-head">
+      <h2>Checkout</h2>
+      <p class="muted">Isi data berikut. Pembayaran disimulasikan (tanpa backend).</p>
+    </div>
+
+    <div class="checkout-grid">
+      <div class="card">
+        <h4>Ringkasan Pesanan</h4>
+        <div id="summaryItems" class="summary-items"></div>
+        <div class="summary-row">
+          <span>Subtotal</span><strong id="summarySubtotal">Rp0</strong>
+        </div>
+        <div class="summary-row">
+          <span>Pajak (10%)</span><strong id="summaryTax">Rp0</strong>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span><strong id="summaryTotal">Rp0</strong>
+        </div>
+      </div>
+
+      <form id="checkoutForm" class="card">
+        <h4>Data Pembeli</h4>
+        <div class="row">
+          <label>Nama Lengkap
+            <input required type="text" name="fullname" placeholder="Nama kamu" />
+          </label>
+          <label>Email
+            <input required type="email" name="email" placeholder="kamu@email.com" />
+          </label>
+        </div>
+        <div class="row">
+          <label>No. HP
+            <input required type="tel" name="phone" placeholder="08xxxxxxxxxx" />
+          </label>
+          <label>Metode
+            <select name="method" required>
+              <option value="pickup">Ambil di Toko</option>
+              <option value="delivery">Antar (Radius 3 km)</option>
+            </select>
+          </label>
+        </div>
+        <label>Alamat (jika antar)
+          <input type="text" name="address" placeholder="Nama jalan, nomor rumah" />
+        </label>
+
+        <h4 class="mt">Pembayaran</h4>
+        <div class="row">
+          <label>Metode Bayar
+            <select name="pay" required>
+              <option value="cash">Cash</option>
+              <option value="transfer">Transfer</option>
+              <option value="ewallet">E‑Wallet</option>
+            </select>
+          </label>
+          <label>Catatan
+            <input type="text" name="note" placeholder="Es batu dikit, no sugar, dll." />
+          </label>
+        </div>
+
+        <button class="btn solid wfull lg" type="submit">Buat Pesanan</button>
+        <small class="muted" id="checkoutStatus"></small>
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
