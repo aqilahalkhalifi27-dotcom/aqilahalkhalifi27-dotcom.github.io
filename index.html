@@ -3,46 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Toko Mochi Enak</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <title>Toko Mochi Modern</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <h1>Toko Mochi Enak</h1>
-    <p>Aneka mochi lembut & manis dalam setiap gigitan!</p>
-  </header>
+  <div class="container fade-in">
+    <header class="header">
+      <h1>Toko Mochi Modern</h1>
+      <p>Aneka mochi lezat & lembut dalam balutan rasa yang menggoda 💖</p>
+    </header>
 
-  <main>
-    <section class="filters">
+    <section class="filter-buttons">
       <button onclick="filterMochi('all')">Semua</button>
       <button onclick="filterMochi('buah')">Buah</button>
       <button onclick="filterMochi('coklat')">Coklat</button>
       <button onclick="filterMochi('matcha')">Matcha</button>
     </section>
 
-    <section class="mochi-grid">
-      <div class="mochi-card" data-category="buah">
-        <img src="https://via.placeholder.com/200x150?text=Mochi+Strawberry" alt="Mochi Strawberry"/>
+    <section class="grid">
+      <!-- Mochi cards -->
+      <div class="card" data-category="buah">
+        <img src="https://source.unsplash.com/400x300/?strawberry,mochi" alt="Mochi Strawberry">
         <h3>Mochi Strawberry</h3>
       </div>
-      <div class="mochi-card" data-category="coklat">
-        <img src="https://via.placeholder.com/200x150?text=Mochi+Coklat" alt="Mochi Coklat"/>
+      <div class="card" data-category="coklat">
+        <img src="https://source.unsplash.com/400x300/?chocolate,mochi" alt="Mochi Coklat">
         <h3>Mochi Coklat</h3>
       </div>
-      <div class="mochi-card" data-category="matcha">
-        <img src="https://via.placeholder.com/200x150?text=Mochi+Matcha" alt="Mochi Matcha"/>
+      <div class="card" data-category="matcha">
+        <img src="https://source.unsplash.com/400x300/?matcha,mochi" alt="Mochi Matcha">
         <h3>Mochi Matcha</h3>
       </div>
-      <div class="mochi-card" data-category="buah">
-        <img src="https://via.placeholder.com/200x150?text=Mochi+Mangga" alt="Mochi Mangga"/>
+      <div class="card" data-category="buah">
+        <img src="https://source.unsplash.com/400x300/?mango,mochi" alt="Mochi Mangga">
         <h3>Mochi Mangga</h3>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <p>© 2025 Toko Mochi Enak. Semua Hak Dilindungi.</p>
-  </footer>
+    <footer class="footer">
+      <p>© 2025 Toko Mochi Modern | Desain oleh Kamu 😎</p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
